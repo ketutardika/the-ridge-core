@@ -108,6 +108,13 @@ class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
 	        ]
 	    );
 
+	    $pages = get_pages();
+	    $page_options = array();
+
+	    foreach ( $pages as $page ) {
+	        $page_options[ $page->ID ] = $page->post_title;
+	    }
+
 	    $this->add_control(
 	        'cta_link_page',
 	        [
