@@ -1,5 +1,5 @@
 <?php
-class Elementor_Hello_World_Widget_2 extends \Elementor\Widget_Base {
+class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
 
 	public function get_name() {
 		return 'hello_world_widget_2';
