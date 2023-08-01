@@ -1,12 +1,12 @@
 <?php
-class Elementor_The_Ridge_Widget_3 extends \Elementor\Widget_Base {
+class Elementor_The_Ridge_Widget_4 extends \Elementor\Widget_Base {
 
 	public function get_name() {
-		return 'the_ridge_featured_image_left';
+		return 'the_ridge_featured_image_right';
 	}
 
 	public function get_title() {
-		return esc_html__( 'The Ridge Featured Image 1', 'the-ridge-core' );
+		return esc_html__( 'The Ridge Featured Image 2', 'the-ridge-core' );
 	}
 
 	public function get_icon() {
@@ -26,9 +26,9 @@ class Elementor_The_Ridge_Widget_3 extends \Elementor\Widget_Base {
 		// Content Tab Start
 
 		$this->start_controls_section(
-			'section_featured_image',
+			'section_featured_image_2',
 			[
-				'label' => esc_html__( 'Featured Image Section 1', 'the-ridge-core' ),
+				'label' => esc_html__( 'Featured Image Section 2', 'the-ridge-core' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -182,10 +182,7 @@ class Elementor_The_Ridge_Widget_3 extends \Elementor\Widget_Base {
 		?>
 
         <div class="container-fluid mt-5">
-                <div class="row align-items-center">
-                    <div class="col-lg-8 col-md-6">
-                        <img src="<?php echo esc_url( $settings['featured_image']['url'] ); ?>" class="img-fluid shadow" alt="">
-                    </div><!--end col-->
+                <div class="row align-items-center">                  
 
                     <div class="col-lg-4 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
                         <div class="section-title">
@@ -203,6 +200,10 @@ class Elementor_The_Ridge_Widget_3 extends \Elementor\Widget_Base {
                             </div>
                         
                         </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-8 col-md-6">
+                        <img src="<?php echo esc_url( $settings['featured_image']['url'] ); ?>" class="img-fluid shadow" alt="">
                     </div><!--end col-->
                 </div><!--end row-->
             </div><!--end container-fluid-->
