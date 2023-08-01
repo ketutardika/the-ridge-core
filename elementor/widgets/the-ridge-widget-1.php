@@ -36,7 +36,7 @@ class Elementor_The_Ridge_Widget_1 extends \Elementor\Widget_Base {
 		$this->add_control(
             'hero_image',
             [
-                'label' => __( 'Hero Image', 'text-domain' ),
+                'label' => __( 'Hero Image', 'the-ridge-core' ),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
                     'url' => \Elementor\Utils::get_placeholder_image_src(),
