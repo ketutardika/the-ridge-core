@@ -10,7 +10,7 @@ class Elementor_The_Ridge_Widget_1 extends \Elementor\Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-code';
+		return 'eicon-image-hotspot';
 	}
 
 	public function get_categories() {
