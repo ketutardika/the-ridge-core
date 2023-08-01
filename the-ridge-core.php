@@ -69,7 +69,7 @@ function filter_action_the_ridge_core_links( $links ) {
      $links['support'] = '<a href="#">' . __( 'Documentation', 'the-ridge-core' ) . '</a>';
      return $links;
 }
-add_filter( 'plugin_action_links_the_ridge_core/the-ridge-core.php', 'filter_action_the_ridge_core_links', 10, 1 );
+add_filter( 'plugin_action_links_the-ridge-core/the-ridge-core.php', 'filter_action_the_ridge_core_links', 10, 1 );
 
 function register_hello_world_widget( $widgets_manager ) {
 
