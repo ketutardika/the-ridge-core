@@ -2,11 +2,11 @@
 class Elementor_The_Ridge_Widget_1 extends \Elementor\Widget_Base {
 
 	public function get_name() {
-		return 'hello_world_widget_1';
+		return 'the_ridge_hero';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Hello World 1', 'elementor-addon' );
+		return esc_html__( 'The Ridge Hero', 'elementor-addon' );
 	}
 
 	public function get_icon() {
@@ -18,13 +18,13 @@ class Elementor_The_Ridge_Widget_1 extends \Elementor\Widget_Base {
 	}
 
 	public function get_keywords() {
-		return [ 'hello', 'world' ];
+		return [ 'the ridge', 'hero' ];
 	}
 
 	protected function render() {
 		?>
 
-		<p> Hello World </p>
+		<p> Hero Section </p>
 
 		<?php
 	}

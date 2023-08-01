@@ -63,7 +63,7 @@ register_deactivation_hook( __FILE__, 'deactivate_the_ridge_core' );
  * admin-specific hooks, and public-facing site hooks.
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-the-ridge-core.php';
-require plugin_dir_path( __FILE__ ) . 'includes/class-the-ridge-core-elementor.php';
+require plugin_dir_path( __FILE__ ) . 'elementor/class-the-ridge-core-elementor.php';
 
 function filter_action_the_ridge_core_links( $links ) {
      $links['settings'] = '<a href="#">' . __( 'Settings', 'the-ridge-core' ) . '</a>';

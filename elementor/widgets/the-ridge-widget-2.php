@@ -2,11 +2,11 @@
 class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
 
 	public function get_name() {
-		return 'hello_world_widget_2';
+		return 'the_ridge_story';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Hello World 2', 'elementor-addon' );
+		return esc_html__( 'The Ridge Story', 'elementor-addon' );
 	}
 
 	public function get_icon() {
@@ -18,7 +18,7 @@ class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
 	}
 
 	public function get_keywords() {
-		return [ 'hello', 'world' ];
+		return [ 'the ridge', 'story' ];
 	}
 
 	protected function register_controls() {

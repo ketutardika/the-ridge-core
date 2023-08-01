@@ -10,7 +10,7 @@
  * @since      1.0.0
  *
  * @package    The_Ridge_Core
- * @subpackage The_Ridge_Core/includes
+ * @subpackage The_Ridge_Core/elementor
  */
 
 /**
@@ -24,7 +24,7 @@
  *
  * @since      1.0.0
  * @package    The_Ridge_Core
- * @subpackage The_Ridge_Core/includes
+ * @subpackage The_Ridge_Core/elementor
  * @author     Ardika <ardikadev@gmail.com>
  */
 
@@ -42,8 +42,8 @@ add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_ca
 
 function register_the_ridge_widget( $widgets_manager ) {
 
-    require_once( __DIR__ . '/../widgets/the-ridge-widget-1.php' );
-    require_once( __DIR__ . '/../widgets/the-ridge-widget-2.php' );
+    require_once( __DIR__ . '/widgets/the-ridge-widget-1.php' );
+    require_once( __DIR__ . '/widgets/the-ridge-widget-2.php' );
 
     $widgets_manager->register( new \Elementor_The_Ridge_Widget_1() );
     $widgets_manager->register( new \Elementor_The_Ridge_Widget_2() );
