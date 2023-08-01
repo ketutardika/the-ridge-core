@@ -104,3 +104,4 @@ class Elementor_The_Ridge_Widget_1 extends \Elementor\Widget_Base {
 
 		<?php
 	}
+}
