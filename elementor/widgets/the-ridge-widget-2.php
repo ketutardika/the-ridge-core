@@ -73,7 +73,7 @@ class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
 	    $this->add_control(
 	        'cta_link_type',
 	        [
-	            'label' => __( 'Button Link Type', 'the-ridge-core' ),
+	            'label' => __( 'Internal or External Link', 'the-ridge-core' ),
 	            'type' => \Elementor\Controls_Manager::CHOOSE,
 	            'options' => [
 	                'external' => [
@@ -85,7 +85,7 @@ class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
 	                    'icon' => 'fa fa-link',
 	                ],
 	            ],
-	            'default' => 'external',
+	            'default' => 'internal',
 	            'toggle' => true,
 	        ]
 	    );
@@ -164,7 +164,7 @@ class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
 		$settings = $this->get_settings_for_display();
 		$cta_link = '';
 		    if ( 'external' === $settings['cta_link_type'] && $settings['cta_link_external']['url'] ) {
-		        $cta_link = $settings['cta_link_external']['url'];
+		        $cta_link = $settings['cta_link_external']['url'] ? $settings['cta_link_external']['url'] : '#';
 		    } elseif ( 'internal' === $settings['cta_link_type'] && $settings['cta_link_page'] ) {
 		        $cta_link = get_permalink( $settings['cta_link_page'] );
 		    }
