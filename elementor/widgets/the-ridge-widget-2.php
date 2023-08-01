@@ -182,7 +182,7 @@ class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
                             <p class="display-8 mx-auto mb-0 text-color-secondary"><?php echo $settings['description']; ?></p>
                             <div class="mt-4">
                                 <?php if ( $settings['cta_text'] && $cta_link ) : ?>
-							        <a class="btn btn-ridge-primary display-9" href="<?php echo esc_url( $cta_link ); ?>" <?php echo $settings['cta_link_external']['is_external'] ? 'target="_blank"' : ''; ?> <?php echo $settings['cta_link_external']['nofollow'] ? 'rel="nofollow"' : ''; ?>>
+							        <a class="btn btn-ridge-primary display-9" href="<?php echo esc_url( $cta_link ); ?>">
 							            <?php echo esc_html( $settings['cta_text'] ); ?>
 							        </a>
 							    <?php endif; ?>
