@@ -98,10 +98,6 @@ class Elementor_The_Ridge_Widget_1 extends \Elementor\Widget_Base {
 		$settings = $this->get_settings_for_display();
 		?>
 
-		<p class="hello-world">
-			<?php echo $settings['title']; ?>
-		</p>
-
 		<!-- Hero Start -->
         <section class="bg-half-170 bg-light pb-0 d-table w-100 bg-hero-ridge" style="background: url('<?php echo esc_url( $settings['hero_image']['url'] ); ?>');">
             <div class="container-fluid">
