@@ -181,22 +181,6 @@ class Elementor_The_Ridge_Widget_3 extends \Elementor\Widget_Base {
 		    }
 		?>
 
-		<!-- Hero Start -->
-        <section class="bg-half-170 bg-light pb-0 d-table w-100 bg-hero-ridge" style="background: url('<?php echo esc_url( $settings['hero_image']['url'] ); ?>');">
-            <div class="container-fluid">
-                <div class="row justify-content-center mt-5">
-                    <div class="col-lg-12 text-center">
-                        <div class="title-heading mt-4">
-                            <h1 class="display-3 text-white title-dark mb-3"> <?php echo $settings['title']; ?> </h1>
-                            <h5 class="fw-medium text-white title-dark mb-3 section-heading-text"> <?php echo $settings['subtitle']; ?> </h5>   
-                        </div>
-                    </div><!--end col-->
-                </div><!--end row-->
-            </div> <!--end container-fluid-->
-        </section><!--end section-->
-        <!-- Hero End -->
-
-
         <div class="container-fluid mt-5">
                 <div class="row align-items-center">
                     <div class="col-lg-8 col-md-6">
@@ -205,8 +189,8 @@ class Elementor_The_Ridge_Widget_3 extends \Elementor\Widget_Base {
 
                     <div class="col-lg-4 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
                         <div class="section-title">
-                            <h6 class="display-9 section-heading-text text-color-primary"><?php echo $settings['title']; ?></h6>
-                            <h4 class="display-6 mb-3 text-color-secondary"><?php echo $settings['subtitle']; ?>.</h4>
+                            <h6 class="display-9 section-heading-text text-color-primary"><?php echo $settings['subtitle']; ?></h6>
+                            <h4 class="display-6 mb-3 text-color-secondary"><?php echo $settings['title']; ?>.</h4>
                             <p class="display-8 para-desc mx-auto mb-0 text-color-primary"><?php echo $settings['description']; ?>  
                             </p>
 
@@ -218,9 +202,6 @@ class Elementor_The_Ridge_Widget_3 extends \Elementor\Widget_Base {
 							    <?php endif; ?>
                             </div>
                         
-                            <div class="mt-4">
-                                <a href="javascript:void(0)" class="display-10 btn btn-ridge-secondary section-heading-text text-color-secondary">explore the villas</i></a>
-                            </div>
                         </div>
                     </div><!--end col-->
                 </div><!--end row-->
