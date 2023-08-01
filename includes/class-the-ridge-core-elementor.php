@@ -42,8 +42,8 @@ add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_ca
 
 function register_hello_world_widget( $widgets_manager ) {
 
-    require_once( __DIR__ . '../widgets/the-ridge-widget-1.php' );
-    require_once( __DIR__ . '../widgets/the-ridge-widget-2.php' );
+    require_once( __DIR__ . '/widgets/the-ridge-widget-1.php' );
+    require_once( __DIR__ . '/widgets/the-ridge-widget-2.php' );
 
     $widgets_manager->register( new \Elementor_The_Ridge_Widget_1() );
     $widgets_manager->register( new \Elementor_The_Ridge_Widget_2() );
