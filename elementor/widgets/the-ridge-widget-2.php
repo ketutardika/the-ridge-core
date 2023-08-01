@@ -82,22 +82,6 @@ class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
 			<?php echo $settings['title']; ?>
 		</p>
 
-
-		<!-- Hero Start -->
-        <section class="bg-half-170 bg-light pb-0 d-table w-100 bg-hero-ridge" style="background: url('<?php echo esc_url( $settings['hero_image']['url'] ); ?>');">
-            <div class="container-fluid">
-                <div class="row justify-content-center mt-5">
-                    <div class="col-lg-12 text-center">
-                        <div class="title-heading mt-4">
-                            <h1 class="display-3 text-white title-dark mb-3"> <?php echo $settings['title']; ?> </h1>
-                            <h5 class="fw-medium text-white title-dark mb-3 section-heading-text"> <?php echo $settings['subtitle']; ?> </h5>   
-                        </div>
-                    </div><!--end col-->
-                </div><!--end row-->
-            </div> <!--end container-fluid-->
-        </section><!--end section-->
-        <!-- Hero End -->
-
 		<?php
 	}
 }
