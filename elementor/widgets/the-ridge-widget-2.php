@@ -60,32 +60,6 @@ class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
 			]
 		);
 
-		$this->end_controls_section();
-
-		// Content Tab End
-
-
-		// Style Tab Start
-
-		$this->start_controls_section(
-			'section_title_style',
-			[
-				'label' => esc_html__( 'Title', 'the-ridge-core' ),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'title_color',
-			[
-				'label' => esc_html__( 'Text Color', 'the-ridge-core' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
 		$this->add_control(
 	        'cta_text',
 	        [
@@ -146,6 +120,32 @@ class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
 	            ],
 	        ]
 	    );
+
+		$this->end_controls_section();
+
+		// Content Tab End
+
+
+		// Style Tab Start
+
+		$this->start_controls_section(
+			'section_title_style',
+			[
+				'label' => esc_html__( 'Title', 'the-ridge-core' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'title_color',
+			[
+				'label' => esc_html__( 'Text Color', 'the-ridge-core' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 
