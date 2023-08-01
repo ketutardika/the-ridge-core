@@ -63,6 +63,7 @@ register_deactivation_hook( __FILE__, 'deactivate_the_ridge_core' );
  * admin-specific hooks, and public-facing site hooks.
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-the-ridge-core.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-the-ridge-core-elementor.php';
 
 function filter_action_the_ridge_core_links( $links ) {
      $links['settings'] = '<a href="#">' . __( 'Settings', 'the-ridge-core' ) . '</a>';
@@ -71,16 +72,7 @@ function filter_action_the_ridge_core_links( $links ) {
 }
 add_filter( 'plugin_action_links_the-ridge-core/the-ridge-core.php', 'filter_action_the_ridge_core_links', 10, 1 );
 
-function register_hello_world_widget( $widgets_manager ) {
 
-    require_once( __DIR__ . '/widgets/the-ridge-widget-1.php' );
-    require_once( __DIR__ . '/widgets/the-ridge-widget-2.php' );
-
-    $widgets_manager->register( new \Elementor_The_Ridge_Widget_1() );
-    $widgets_manager->register( new \Elementor_The_Ridge_Widget_2() );
-
-}
-add_action( 'elementor/widgets/register', 'register_hello_world_widget' );
 
 /**
  * Begins execution of the plugin.

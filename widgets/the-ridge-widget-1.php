@@ -14,7 +14,7 @@ class Elementor_The_Ridge_Widget_1 extends \Elementor\Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'basic' ];
+		return [ 'the-ridge-category' ];
 	}
 
 	public function get_keywords() {
