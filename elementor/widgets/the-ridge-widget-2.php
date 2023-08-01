@@ -6,7 +6,7 @@ class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'The Ridge Story', 'elementor-addon' );
+		return esc_html__( 'The Ridge Story', 'the-ridge-core' );
 	}
 
 	public function get_icon() {
@@ -28,7 +28,7 @@ class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'section_title',
 			[
-				'label' => esc_html__( 'Title', 'elementor-addon' ),
+				'label' => esc_html__( 'Title', 'the-ridge-core' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -36,9 +36,9 @@ class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => esc_html__( 'Title', 'elementor-addon' ),
+				'label' => esc_html__( 'Title', 'the-ridge-core' ),
 				'type' => \Elementor\Controls_Manager::TEXTAREA,
-				'default' => esc_html__( 'Hello world', 'elementor-addon' ),
+				'default' => esc_html__( 'Hello world', 'the-ridge-core' ),
 			]
 		);
 
@@ -52,7 +52,7 @@ class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'section_title_style',
 			[
-				'label' => esc_html__( 'Title', 'elementor-addon' ),
+				'label' => esc_html__( 'Title', 'the-ridge-core' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -60,7 +60,7 @@ class Elementor_The_Ridge_Widget_2 extends \Elementor\Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => esc_html__( 'Text Color', 'elementor-addon' ),
+				'label' => esc_html__( 'Text Color', 'the-ridge-core' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
