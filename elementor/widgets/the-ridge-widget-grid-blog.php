@@ -169,6 +169,8 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 			    if ($query->have_posts()) {
 			    	while ($query->have_posts()) {
 		            	$query->the_post();
+		            	// Get the post title and truncate it to 122 characters
+		            	$title = $this->get_truncated_title(40);
 			            // Get the post description and truncate it to 122 characters
 			            $description = $this->get_truncated_description(122);
 			            // Get the first category for the current post
@@ -194,7 +196,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 							            }
 			                        ?>
 			                        <h4 class="display-6 mb-3 text-color-secondary">
-			                        	<a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
+			                        	<a href="<?php echo get_the_permalink(); ?>"><?php echo $title; ?></a>
 			                        </h4>
 			                        <p class="display-8 para-desc mx-auto mb-0 text-color-primary"><?php echo $description; ?>
 			                        </p>
@@ -238,5 +240,14 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 	        $post_excerpt = wp_trim_words($post_excerpt, $length, '...');
 	    }
 	    return $post_excerpt;
+	}
+
+	// Helper function to get truncated post description
+	private function get_truncated_title($length) {
+	    $post_title = get_the_title();
+	    if (mb_strlen($post_title) > $length) {
+	        $post_title = wp_trim_words($post_title, $length);
+	    }
+	    return $post_title;
 	}
 }
