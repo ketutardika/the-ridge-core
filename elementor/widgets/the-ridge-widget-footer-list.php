@@ -91,7 +91,6 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 					[
 						'list_title' => esc_html__( 'Title #1', 'textdomain' ),
 						'list_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'textdomain' ),
-						'list_link_external'=> esc_html__( 'Item content. Click the edit button to change this text.', 'textdomain' ),
 					],
 					[
 						'list_title' => esc_html__( 'Title #2', 'textdomain' ),
@@ -108,6 +107,7 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
+		$cta_link = '';
 		$cta_link = $settings['list_link_external']['url'] ? $settings['list_link_external']['url'] : '#';
 
 		if ( $settings['list'] ) {
