@@ -91,6 +91,7 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 					[
 						'list_title' => esc_html__( 'Title #1', 'textdomain' ),
 						'list_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'textdomain' ),
+						'list_link_external'=> esc_html__( 'Item content. Click the edit button to change this text.', 'textdomain' ),
 					],
 					[
 						'list_title' => esc_html__( 'Title #2', 'textdomain' ),
@@ -107,13 +108,14 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
+		$cta_link = $settings['list_link_external']['url'] ? $settings['list_link_external']['url'] : '#';
 
 		if ( $settings['list'] ) {
 			echo '<dl>';
 			foreach (  $settings['list'] as $item ) {
 				echo '<dt class="elementor-repeater-item-' . esc_attr( $item['_id'] ) . '">' . $item['list_title'] . '</dt>';
 				echo '<dd>' . $item['list_content'] . '</dd>';
-				echo '<dd>' . $item['list_link_external'] . '</dd>';
+				echo '<dd>' . esc_url( $cta_link ) . '</dd>';
 			}
 			echo '</dl>';
 		}
