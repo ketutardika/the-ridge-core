@@ -168,6 +168,10 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 
 			    if ($query->have_posts()) {
 			    	while ($query->have_posts()) {
+			    		global $post;
+
+					    // Get the post ID
+					    $post_id = $post->ID;
 		            	$query->the_post();
 		            	// Get the post thumbnail and crop it to 416x550 size
 			            $thumbnail = $this->get_resized_thumbnail($post_id, 416, 550);
