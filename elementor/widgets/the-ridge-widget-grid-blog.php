@@ -235,7 +235,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
         return $options;
     }
 
-   // Helper function to get resized post thumbnail
+  // Helper function to get resized post thumbnail
 	private function get_resized_thumbnail($width, $height) {
 	    $thumbnail_id = get_post_thumbnail_id();
 	    if ($thumbnail_id) {
@@ -244,12 +244,22 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 	        $image_width = $image_data[1];
 	        $image_height = $image_data[2];
 
-	        $resized_image = image_resize($image_url, $width, $height, true, null, null, 100);
+	        // Get the image editor
+	        $image_editor = wp_get_image_editor($image_url);
+	        if (is_wp_error($image_editor)) {
+	            return false;
+	        }
+
+	        // Resize the image
+	        $resized_image = $image_editor->resize($width, $height, true);
 	        if (is_wp_error($resized_image)) {
 	            return false;
 	        }
 
-	        return $resized_image;
+	        // Save the resized image and get its URL
+	        $resized_image_url = $image_editor->save();
+
+	        return $resized_image_url;
 	    }
 
 	    return false;
