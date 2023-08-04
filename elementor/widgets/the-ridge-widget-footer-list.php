@@ -80,11 +80,11 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 				'default' => [
 					[
 						'list_title' => esc_html__( 'About The Ridge', 'textdomain' ),
-						'website_link' => esc_url__( 'http://staging.theridgebali.com/', 'textdomain' ),
+						'website_link' => esc_html__( 'http://staging.theridgebali.com/', 'textdomain' ),
 					],
 					[
 						'list_title' => esc_html__( 'Explore The Villas', 'textdomain' ),
-						'website_link' => esc_url__( 'http://staging.theridgebali.com/', 'textdomain' ),
+						'website_link' => esc_html__( 'http://staging.theridgebali.com/', 'textdomain' ),
 					],
 				],
 				'title_field' => '{{{ list_title }}}',
