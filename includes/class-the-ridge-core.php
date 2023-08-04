@@ -215,4 +215,31 @@ class The_Ridge_Core {
 		return $this->version;
 	}
 
+	public function custom_force_thumbnail_crop($post_id, $thumbnail, $width, $height, $crop = true) {
+    // Get the attachment ID for the post thumbnail.
+    $attachment_id = get_post_thumbnail_id($post_id);
+
+    if ($attachment_id) {
+        // Get the file path of the attachment.
+        $file_path = get_attached_file($attachment_id);
+
+        // Get the image editor.
+        $image_editor = wp_get_image_editor($file_path);
+
+        if (!is_wp_error($image_editor)) {
+            // Resize or crop the image.
+            $image_editor->resize($width, $height, $crop);
+
+            // Save the image with the same filename, overwriting the original.
+            $saved = $image_editor->save($file_path);
+
+            if (is_wp_error($saved)) {
+                error_log("Failed to save the cropped thumbnail for post ID: " . $post_id);
+            }
+        } else {
+            error_log("Failed to load image editor for post ID: " . $post_id);
+        }
+    }
+}
+
 }
