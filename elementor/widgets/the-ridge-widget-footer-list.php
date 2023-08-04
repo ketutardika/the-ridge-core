@@ -67,17 +67,18 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 		);
 
 		$repeater->add_control(
-			'list_link_external',
+			'website_link',
 	        [
-	            'label' => __( 'List Link', 'the-ridge-core' ),
-	            'type' => \Elementor\Controls_Manager::URL,
-	            'placeholder' => __( 'https://your-external-link.com', 'the-ridge-core' ),
-	            'show_external' => true,
-	            'default' => [
-	                'url' => '',
-	                'is_external' => true,
-	                'nofollow' => true,
-	            ],
+	            'label' => esc_html__( 'Link', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::URL,
+				'options' => [ 'url', 'is_external', 'nofollow' ],
+				'default' => [
+					'url' => '',
+					'is_external' => true,
+					'nofollow' => true,
+					// 'custom_attributes' => '',
+				],
+				'label_block' => true,
 	        ]
 		);
 
@@ -107,15 +108,16 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		$cta_link = '';
-		$cta_link = $settings['list_link_external']['url'] ? $settings['list_link_external']['url'] : '#';
-
+		if ( ! empty( $settings['website_link']['url'] ) ) {
+			$this->add_link_attributes( 'website_link', $settings['website_link'] );
+		}
 		if ( $settings['list'] ) {
 			echo '<dl>';
 			foreach (  $settings['list'] as $item ) {
 				echo '<dt class="elementor-repeater-item-' . esc_attr( $item['_id'] ) . '">' . $item['list_title'] . '</dt>';
 				echo '<dd>' . $item['list_content'] . '</dd>';
 				echo '<dd>' . esc_url( $cta_link ) . '</dd>';
+				echo '<dd>' . $this->get_render_attribute_string( 'website_link' ). '</dd>';
 			}
 			echo '</dl>';
 		}
@@ -129,6 +131,7 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 				<dt class="elementor-repeater-item-{{ item._id }}">{{{ item.list_title }}}</dt>
 				<dd>{{{ item.list_content }}}</dd>
 				<dd>{{{ item.list_link_external }}}</dd>
+				<dd>{{{ item.website_link.url }}}</dd>
 			<# }); #>
 			</dl>
 		<# } #>
