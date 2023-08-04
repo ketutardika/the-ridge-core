@@ -172,7 +172,7 @@ class Elementor_The_Ridge_Widget_Title extends \Elementor\Widget_Base {
 		?>
 
 		<!-- Title Start -->
-		<div class="card">
+		<div class="card text-center mb-4 pb-2">
 			<div class="card-body content">
 	            <h6 class="mt-3 display-9 section-heading-text text-color-primary"><?php echo $settings['subtitle']; ?></h6>
 	            <h4 class="display-6 mb-3 text-color-secondary"><?php echo $settings['title']; ?></h4>
