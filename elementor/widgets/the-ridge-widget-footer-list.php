@@ -124,25 +124,4 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
         <!-- Grid column -->
      <?php
 	}
-
-	protected function content_template() {
-		?>
-		<!-- Grid column -->
-        <div class="col-md-12">
-          <h6 class="display-9 text-uppercase fw-medium mb-4 text-space-grotesk text-color-secondary">
-            {{{ settings.title }}}
-          </h6>
-          <p class="display-8 text-color-primary">
-		<# if ( settings.list.length ) { #>
-			<dl>
-			<# _.each( settings.list, function( item ) { #>
-				<a href="{{{ item.website_link.url }}}" class="text-reset elementor-repeater-item-{{ item._id }}">{{{ item.list_content }}}</a><br/>
-			<# }); #>
-			</dl>
-		<# } #>
-		</p>
-        </div>
-        <!-- Grid column -->
-     <?php
-	}
 }
