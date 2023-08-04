@@ -66,6 +66,21 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 			]
 		);
 
+		$repeater->add_control(
+			'list_link_external',
+	        [
+	            'label' => __( 'List Link', 'the-ridge-core' ),
+	            'type' => \Elementor\Controls_Manager::URL,
+	            'placeholder' => __( 'https://your-external-link.com', 'the-ridge-core' ),
+	            'show_external' => true,
+	            'default' => [
+	                'url' => '',
+	                'is_external' => true,
+	                'nofollow' => true,
+	            ],
+	        ]
+		);
+
 		$this->add_control(
 			'list',
 			[
@@ -98,6 +113,7 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 			foreach (  $settings['list'] as $item ) {
 				echo '<dt class="elementor-repeater-item-' . esc_attr( $item['_id'] ) . '">' . $item['list_title'] . '</dt>';
 				echo '<dd>' . $item['list_content'] . '</dd>';
+				echo '<dd>' . $item['list_link_external'] . '</dd>';
 			}
 			echo '</dl>';
 		}
@@ -110,6 +126,7 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 			<# _.each( settings.list, function( item ) { #>
 				<dt class="elementor-repeater-item-{{ item._id }}">{{{ item.list_title }}}</dt>
 				<dd>{{{ item.list_content }}}</dd>
+				<dd>{{{ item.list_link_external }}}</dd>
 			<# }); #>
 			</dl>
 		<# } #>
