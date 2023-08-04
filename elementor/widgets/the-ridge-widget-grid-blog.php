@@ -174,9 +174,8 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 		            // Get the post description and truncate it to 122 characters
 		            $description = $this->get_truncated_description(122);
 		            // Get the first category for the current post
-	            	$categories = get_the_category();
-	            }
-	    	?>
+	            	$categories = get_the_category();	            
+	    		?>
 
 	            <div class="col-lg-4 col-md-6 mt-4 pt-2">
 	                <div class="card overflow-hidden">
@@ -207,7 +206,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 	                </div>
 	            </div><!--end col-->
 	            <?php
-	            }
+	           }
 		    } else {
 		        echo __('No posts found.', 'the-ridge-core');
 		    }
