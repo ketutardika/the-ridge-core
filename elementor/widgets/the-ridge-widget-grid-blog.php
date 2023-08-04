@@ -157,7 +157,8 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 	    ?>
 
 		<!-- Blog Grid Start -->
-	    <div class="row justify-content-center blog-section">
+		<div class="container-fluid blog-section">
+	    <div class="row justify-content-center">
 	    	<?php
 	    		$args = array(
 			        'post_type' => $settings['post_type'],
@@ -220,6 +221,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 	    wp_reset_postdata();
 	    ?>
 	    </div>
+		</div>
         <!-- Blog Grid End -->
         <?php
 	}
