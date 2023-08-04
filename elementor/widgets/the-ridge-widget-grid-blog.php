@@ -174,17 +174,15 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 			            // Get the post description and truncate it to 122 characters
 			            $description = $this->get_truncated_description(122);
 			            // Get the first category for the current post
-		            	$categories = get_the_category();	
-
-		            	$post_id = get_the_ID();
-              
+		            	$categories = get_the_category();	            
 		    			?>
 
 		    			<div class="col-lg-4 col-md-6 mt-4 pt-2">
 			                <div class="card overflow-hidden">
 			                    <div class="image position-relative overflow-hidden">
-			                    	<?php // Call the custom function for the desired thumbnail size and dimensions.
-    custom_force_thumbnail_crop($post_id, 'post-thumbnail', 416, 550);   ?>
+			                    	<?php if ($thumbnail) { ?>
+			                        <img src="<?php esc_url($thumbnail[0]) ?>" width="<?php $thumbnail[1] ?>" height="<?php $thumbnail[2] ?>" class="img-fluid" alt="<?php echo get_the_title(); ?>">
+			                    <?php } ?>
 			                    </div>
 
 			                    <div class="card-body content">	                        	
@@ -238,34 +236,34 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
     }
 
   // Helper function to get resized post thumbnail
-	private function get_resized_thumbnail($width, $height) {
-	    $thumbnail_id = get_post_thumbnail_id();
-	    if ($thumbnail_id) {
-	        $image_data = wp_get_attachment_image_src($thumbnail_id, 'full');
-	        $image_url = $image_data[0];
-	        $image_width = $image_data[1];
-	        $image_height = $image_data[2];
+private function get_resized_thumbnail($width, $height) {
+    $thumbnail_id = get_post_thumbnail_id();
+    if ($thumbnail_id) {
+        $image_data = wp_get_attachment_image_src($thumbnail_id, 'full');
+        $image_url = $image_data[0];
+        $image_width = $image_data[1];
+        $image_height = $image_data[2];
 
-	        // Get the image editor
-	        $image_editor = wp_get_image_editor($image_url);
-	        if (is_wp_error($image_editor)) {
-	            return false;
-	        }
+        // Get the image editor
+        $image_editor = wp_get_image_editor($image_url);
+        if (is_wp_error($image_editor)) {
+            return false;
+        }
 
-	        // Resize the image
-	        $resized_image = $image_editor->resize($width, $height, true);
-	        if (is_wp_error($resized_image)) {
-	            return false;
-	        }
+        // Resize the image
+        $resized_image = $image_editor->resize($width, $height, true);
+        if (is_wp_error($resized_image)) {
+            return false;
+        }
 
-	        // Save the resized image and get its URL
-	        $resized_image_url = $image_editor->save();
+        // Save the resized image and get its URL
+        $resized_image_url = $image_editor->save();
 
-	        return $resized_image_url;
-	    }
+        return $resized_image_url;
+    }
 
-	    return false;
-	}
+    return false;
+}
 
 	// Helper function to get truncated post description
 	private function get_truncated_description($length) {
