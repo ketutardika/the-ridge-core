@@ -96,10 +96,18 @@ class Elementor_The_Ridge_Widget_1 extends \Elementor\Widget_Base {
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
+
+		$thumbnail_url = '';
+	    if ( $settings['hero_image']['id'] ) {
+	        $thumbnail = wp_get_attachment_image_src( $settings['hero_image']['id'], $thumbnail_size );
+	        if ( $thumbnail ) {
+	            $thumbnail_url = $thumbnail[0];
+	        }
+	    }
 		?>
 
 		<!-- Hero Start -->
-        <section class="bg-half-170 bg-light pb-0 d-table w-100 bg-hero-ridge" style="background: url('<?php echo esc_url( $settings['hero_image']['url'], 'thumbnail' ); ?>');">
+        <section class="bg-half-170 bg-light pb-0 d-table w-100 bg-hero-ridge" style="background: url('<?php echo esc_url( $thumbnail_url ); ?>');">
             <div class="container-fluid">
                 <div class="row justify-content-center mt-5">
                     <div class="col-lg-12 text-center">
