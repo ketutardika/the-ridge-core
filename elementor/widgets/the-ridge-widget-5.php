@@ -184,6 +184,25 @@ class Elementor_The_Ridge_Widget_5 extends \Elementor\Widget_Base {
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
+
+		$thumbnail_size = 'large';
+
+		$thumbnail_url = '';
+		$thumbnail_url_second = '';
+	    if ( $settings['featured_image']['id'] ) {
+	        $thumbnail = wp_get_attachment_image_src( $settings['featured_image']['id'], $thumbnail_size );
+	        if ( $thumbnail ) {
+	            $thumbnail_url = $thumbnail[0];
+	        }
+	    }
+
+	    if ( $settings['featured_image_secondary']['id'] ) {
+	        $thumbnail = wp_get_attachment_image_src( $settings['featured_image_secondary']['id'], $thumbnail_size );
+	        if ( $thumbnail ) {
+	            $thumbnail_url_second = $thumbnail[0];
+	        }
+	    }
+
 		$cta_link = '';
 		    if ( 'external' === $settings['cta_link_type'] && $settings['cta_link_external']['url'] ) {
 		        $cta_link = $settings['cta_link_external']['url'] ? $settings['cta_link_external']['url'] : '#';
@@ -210,11 +229,11 @@ class Elementor_The_Ridge_Widget_5 extends \Elementor\Widget_Base {
                         </div>                            
                     </div>
                     <div class="mt-5 align-bottom d-none d-sm-block">
-                        <img src="<?php echo esc_url( $settings['featured_image_secondary']['url'] ); ?>" class="img-fluid shadow" alt="">
+                        <img src="<?php echo esc_url( $thumbnail_url_second ); ?>" class="img-fluid shadow" alt="">
                     </div>
                 </div><!--end col-->
                 <div class="col-lg-8 col-md-6 order-first order-sm-1">
-                    <img src="<?php echo esc_url( $settings['featured_image']['url'] ); ?>" class="img-fluid shadow" alt="">
+                    <img src="<?php echo esc_url( $thumbnail_url ); ?>" class="img-fluid shadow" alt="">
                 </div><!--end col--> 
         </div><!--end row-->
     </div><!--end container-fluid-->
