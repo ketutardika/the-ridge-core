@@ -168,13 +168,9 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 
 			    if ($query->have_posts()) {
 			    	while ($query->have_posts()) {
-			    		global $post;
-
-					    // Get the post ID
-					    $post_id = $post->ID;
 		            	$query->the_post();
 		            	// Get the post thumbnail and crop it to 416x550 size
-			            $thumbnail = $this->get_resized_thumbnail($post_id, 416, 550);
+			            $thumbnail = $this->get_resized_thumbnail(416, 550);
 			            // Get the post description and truncate it to 122 characters
 			            $description = $this->get_truncated_description(122);
 			            // Get the first category for the current post
@@ -239,15 +235,23 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
         return $options;
     }
 
-    // Helper function to get resized post thumbnail
-	private function get_resized_thumbnail($post_id, $width, $height) {
-	    $thumbnail_id = get_post_thumbnail_id($post_id);
+   // Helper function to get resized post thumbnail
+	private function get_resized_thumbnail($width, $height) {
+	    $thumbnail_id = get_post_thumbnail_id();
 	    if ($thumbnail_id) {
-	        $thumbnail = wp_get_attachment_image_src($thumbnail_id, array($width, $height), true);
-	        if ($thumbnail) {
-	            return $thumbnail;
+	        $image_data = wp_get_attachment_image_src($thumbnail_id, 'full');
+	        $image_url = $image_data[0];
+	        $image_width = $image_data[1];
+	        $image_height = $image_data[2];
+
+	        $resized_image = image_resize($image_url, $width, $height, true, null, null, 100);
+	        if (is_wp_error($resized_image)) {
+	            return false;
 	        }
+
+	        return $resized_image;
 	    }
+
 	    return false;
 	}
 
