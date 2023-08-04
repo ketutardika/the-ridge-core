@@ -185,8 +185,17 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 			                    <?php } ?>
 			                    </div>
 
-			                    <div class="card-body content">
-			                        <h6 class="mt-3 display-9 section-heading-text text-color-primary">
+			                    <div class="card-body content">	                        	
+			                        <?php 
+			                        	if (!empty($categories)) {
+							                $category = $categories[0]; ?>
+							                <h6 class="mt-3 display-9 section-heading-text text-color-primary">
+							                	<a href="">
+							                	<?php echo $category->name; ?>          		
+							                	</a>
+							                </h6>
+							            }
+			                        ?>
 			                        <h4 class="display-6 mb-3 text-color-secondary">
 			                        	<a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
 			                        </h4>
