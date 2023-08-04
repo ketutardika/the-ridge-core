@@ -180,7 +180,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 		    			<div class="col-lg-4 col-md-6 mt-4 pt-2">
 			                <div class="card overflow-hidden">
 			                    <div class="image position-relative overflow-hidden">
-			                    	<?php if ($thumbnail) { ?>
+			                    	<?php if (!empty($thumbnail)) { ?>
 			                        <img src="<?php esc_url($thumbnail[0]) ?>" width="<?php $thumbnail[1] ?>" height="<?php $thumbnail[2] ?>" class="img-fluid" alt="<?php echo get_the_title(); ?>">
 			                    <?php } ?>
 			                    </div>
@@ -206,13 +206,11 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 			                </div>
 			            </div><!--end col-->
 		            	<?php
-	           		}} 
-			    else {
-			        echo __('No posts found.', 'the-ridge-core');
-			    }
+	           		}
+	           	}
 
-	    wp_reset_postdata();
-	    ?>
+	    		wp_reset_postdata();
+	    	?>
 	    </div>
         <!-- Blog Grid End -->
         <?php
