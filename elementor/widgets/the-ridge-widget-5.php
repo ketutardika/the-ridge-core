@@ -2,7 +2,7 @@
 class Elementor_The_Ridge_Widget_5 extends \Elementor\Widget_Base {
 
 	public function get_name() {
-		return 'the_ridge_featured_image_right';
+		return 'the_ridge_featured_image_main';
 	}
 
 	public function get_title() {
