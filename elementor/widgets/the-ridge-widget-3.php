@@ -173,7 +173,7 @@ class Elementor_The_Ridge_Widget_3 extends \Elementor\Widget_Base {
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		$thumbnail_size = 'thumbnail';
+		$thumbnail_size = 'medium_large';
 
 		$thumbnail_url = '';
 	    if ( $settings['featured_image']['id'] ) {
