@@ -186,9 +186,10 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 			                    <div class="card-body content">	                        	
 			                        <?php 
 			                        	if (!empty($categories)) {
-							                $category = $categories[0]; ?>
+							                $category = $categories[0]; ?>.
+							                $category_id = get_cat_ID( $category );
 							                <h6 class="mt-3 display-9 section-heading-text text-color-primary">
-							                	<a href="<?php get_category_link($category->term_id); ?>">
+							                	<a href="<?php get_category_link($category_id); ?>">
 							                			<?php echo $category->name; ?>
 							                		</a>
 							                </h6>
