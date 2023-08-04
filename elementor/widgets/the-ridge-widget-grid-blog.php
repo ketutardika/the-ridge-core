@@ -48,7 +48,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
             [
                 'label' => __('Number of Posts', 'the-ridge-core'),
                 'type' => \Elementor\Controls_Manager::NUMBER,
-                'default' => 5,
+                'default' => 3,
             ]
         );
 
