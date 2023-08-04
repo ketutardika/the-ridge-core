@@ -180,7 +180,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 		    			<div class="col-lg-4 col-md-6 mt-4 pt-2">
 			                <div class="card overflow-hidden">
 			                    <div class="image position-relative overflow-hidden">
-			                    	<?php <?php the_post_thumbnail( 'blog-post-grid' ); ?> ?>
+			                    	<?php the_post_thumbnail( 'blog-post-grid' ); ?>
 			                    </div>
 
 			                    <div class="card-body content">	                        	
