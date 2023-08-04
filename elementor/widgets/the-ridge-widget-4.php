@@ -183,7 +183,7 @@ class Elementor_The_Ridge_Widget_4 extends \Elementor\Widget_Base {
 	            $thumbnail_url = $thumbnail[0];
 	        }
 	    }
-	    
+
 		$cta_link = '';
 		    if ( 'external' === $settings['cta_link_type'] && $settings['cta_link_external']['url'] ) {
 		        $cta_link = $settings['cta_link_external']['url'] ? $settings['cta_link_external']['url'] : '#';
@@ -214,7 +214,7 @@ class Elementor_The_Ridge_Widget_4 extends \Elementor\Widget_Base {
                     </div><!--end col-->
 
                     <div class="col-lg-8 col-md-6 order-first order-sm-1">
-                        <img src="<?php echo esc_url( $thumbnail_url ); ?>" class="img-fluid shadow" alt="">
+                        <img src="<?php echo esc_url( $thumbnail_url ); ?>" class="img-fluid shadow object-fit-fill" alt="">
                     </div><!--end col-->
                 </div><!--end row-->
             </div><!--end container-fluid-->
