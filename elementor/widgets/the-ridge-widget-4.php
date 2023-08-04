@@ -202,7 +202,7 @@ class Elementor_The_Ridge_Widget_4 extends \Elementor\Widget_Base {
                         </div>
                     </div><!--end col-->
 
-                    <div class="col-lg-8 col-md-6">
+                    <div class="col-lg-8 col-md-6 order-first order-sm-1">
                         <img src="<?php echo esc_url( $settings['featured_image']['url'] ); ?>" class="img-fluid shadow" alt="">
                     </div><!--end col-->
                 </div><!--end row-->
