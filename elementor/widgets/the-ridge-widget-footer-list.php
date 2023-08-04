@@ -116,7 +116,6 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 			foreach (  $settings['list'] as $item ) {
 				echo '<dt class="elementor-repeater-item-' . esc_attr( $item['_id'] ) . '">' . $item['list_title'] . '</dt>';
 				echo '<dd>' . $item['list_content'] . '</dd>';
-				echo '<dd>' . esc_url( $cta_link ) . '</dd>';
 				echo '<dd>' . $this->get_render_attribute_string( 'website_link' ). '</dd>';
 			}
 			echo '</dl>';
