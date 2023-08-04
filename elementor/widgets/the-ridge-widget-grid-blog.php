@@ -190,7 +190,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 			                        		{
 							                $category = $categories[0]; ?>
 							                <h6 class="mt-3 display-9 section-heading-text text-color-primary">
-							                	<a href="<?php get_category_link($category->cat_ID); ?>">
+							                	<a href="<?php get_category_link($categorys->cat_ID); ?>">
 							                			<?php echo $category->name; ?>
 							                		</a>
 							                </h6>
