@@ -55,18 +55,6 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 						'default' => esc_html__( 'List Title' , 'textdomain' ),
 						'label_block' => true,
 					],
-					[
-						'name' => 'list_link',
-						'label' => __( 'Link', 'the-ridge-core' ),
-			            'type' => \Elementor\Controls_Manager::URL,
-			            'placeholder' => __( 'https://your-link.com', 'the-ridge-core' ),
-			            'show_external' => true,
-			            'default' => [
-			                'url' => '',
-			                'is_external' => true,
-			                'nofollow' => true,
-			            ],
-					],
 				],
 				'default' => [
 					[
@@ -94,7 +82,6 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 			echo '<dl>';
 			foreach (  $settings['list'] as $item ) {
 				echo '<dt class="elementor-repeater-item-' . esc_attr( $item['_id'] ) . '">' . $item['list_title'] . '</dt>';
-				echo '<dd>' . $item['list_link'] . '</dd>';
 			}
 			echo '</dl>';
 		}
