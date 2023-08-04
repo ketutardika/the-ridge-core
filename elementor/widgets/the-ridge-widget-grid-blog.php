@@ -180,19 +180,10 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 		    			<div class="col-lg-4 col-md-6 mt-4 pt-2">
 			                <div class="card overflow-hidden">
 			                    <div class="image position-relative overflow-hidden">
-			                    	<?php if ($thumbnail) { ?>
-			                        <img src="<?php esc_url($thumbnail[0]) ?>" width="<?php $thumbnail[1] ?>" height="<?php $thumbnail[2] ?>" class="img-fluid" alt="<?php echo get_the_title(); ?>">
-			                    <?php } ?>
 			                    </div>
 
 			                    <div class="card-body content">
 			                        <h6 class="mt-3 display-9 section-heading-text text-color-primary">
-			                        <?php 
-			                        	if (!empty($categories)) {
-							                $category = $categories[0]; ?>
-							                <h6 class="mt-3 display-9 section-heading-text text-color-primary"><a href="<?php get_category_link($category->term_id); ?>"><?php echo $category->name; ?></a></h6>
-							            }
-			                        ?>
 			                        <h4 class="display-6 mb-3 text-color-secondary">
 			                        	<a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
 			                        </h4>
