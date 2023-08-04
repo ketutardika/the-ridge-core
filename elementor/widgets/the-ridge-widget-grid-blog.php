@@ -205,10 +205,9 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 			                    </div>
 			                </div>
 			            </div><!--end col-->
-
 		            	<?php
-	           		}
-			    } else {
+	           		}} 
+			    else {
 			        echo __('No posts found.', 'the-ridge-core');
 			    }
 
