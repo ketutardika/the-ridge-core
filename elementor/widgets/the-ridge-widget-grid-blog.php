@@ -168,48 +168,20 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 
 			    if ($query->have_posts()) {
 			    	while ($query->have_posts()) {
-	            	$query->the_post();
-	            	// Get the post thumbnail and crop it to 416x550 size
-		            $thumbnail = $this->get_resized_thumbnail(416, 550);
-		            // Get the post description and truncate it to 122 characters
-		            $description = $this->get_truncated_description(122);
-		            // Get the first category for the current post
-	            	$categories = get_the_category();	            
-	    		?>
+		            	$query->the_post();
+		            	// Get the post thumbnail and crop it to 416x550 size
+			            $thumbnail = $this->get_resized_thumbnail(416, 550);
+			            // Get the post description and truncate it to 122 characters
+			            $description = $this->get_truncated_description(122);
+			            // Get the first category for the current post
+		            	$categories = get_the_category();	            
+		    			?>
 
-	            <div class="col-lg-4 col-md-6 mt-4 pt-2">
-	                <div class="card overflow-hidden">
-	                    <div class="image position-relative overflow-hidden">
-	                    	<?php if ($thumbnail) { ?>
-	                        <img src="<?php esc_url($thumbnail[0]) ?>" width="<?php $thumbnail[1] ?>" height="<?php $thumbnail[2] ?>" class="img-fluid" alt="<?php echo get_the_title(); ?>">
-	                    <?php } ?>
-	                    </div>
-
-	                    <div class="card-body content">
-	                        <h6 class="mt-3 display-9 section-heading-text text-color-primary">
-	                        <?php 
-	                        	if (!empty($categories)) {
-					                $category = $categories[0]; ?>
-					                <h6 class="mt-3 display-9 section-heading-text text-color-primary"><a href="<?php get_category_link($category->term_id); ?>"><?php echo $category->name; ?></a></h6>
-					            }
-	                        ?>
-	                        <h4 class="display-6 mb-3 text-color-secondary">
-	                        	<a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
-	                        </h4>
-	                        <p class="display-8 para-desc mx-auto mb-0 text-color-primary"><?php echo $description; ?>
-	                        </p>
-	                    
-	                        <div class="mt-4">
-	                            <a href="<?php get_category_link($category->term_id); ?>" class="display-10 btn btn-ridge-secondary section-heading-text text-color-secondary">Continue Reading</i></a>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div><!--end col-->
-	            <?php
-	           }
-		    } else {
-		        echo __('No posts found.', 'the-ridge-core');
-		    }
+		            	<?php
+	           		}
+			    } else {
+			        echo __('No posts found.', 'the-ridge-core');
+			    }
 
 	    wp_reset_postdata();
 	    ?>
