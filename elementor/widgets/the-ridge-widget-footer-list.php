@@ -71,11 +71,9 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 				'default' => [
 					[
 						'list_title' => esc_html__( 'Title #1', 'textdomain' ),
-						'list_link' => esc_html__( 'Item content. Click the edit button to change this text.', 'textdomain' ),
 					],
 					[
 						'list_title' => esc_html__( 'Title #2', 'textdomain' ),
-						'list_link' => esc_html__( 'Item content. Click the edit button to change this text.', 'textdomain' ),
 					],
 				],
 				'title_field' => '{{{ list_title }}}',
