@@ -1,16 +1,16 @@
 <?php
-class Elementor_The_Ridge_Widget_5 extends \Elementor\Widget_Base {
+class Elementor_The_Ridge_Widget_Cta extends \Elementor\Widget_Base {
 
 	public function get_name() {
-		return 'the_ridge_featured_image_main';
+		return 'the_ridge_featured_cta';
 	}
 
 	public function get_title() {
-		return esc_html__( 'The Ridge Featured Main Image', 'the-ridge-core' );
+		return esc_html__( 'The Ridge Featured CTA', 'the-ridge-core' );
 	}
 
 	public function get_icon() {
-		return 'eicon-featured-image';
+		return 'eicon-dual-button';
 	}
 
 	public function get_categories() {
@@ -18,7 +18,7 @@ class Elementor_The_Ridge_Widget_5 extends \Elementor\Widget_Base {
 	}
 
 	public function get_keywords() {
-		return [ 'the ridge', 'featured image' ];
+		return [ 'the ridge', 'featured cta' ];
 	}
 
 	protected function register_controls() {
@@ -28,57 +28,27 @@ class Elementor_The_Ridge_Widget_5 extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'section_featured_image_2',
 			[
-				'label' => esc_html__( 'Featured Image Section 2', 'the-ridge-core' ),
+				'label' => esc_html__( 'Featured CTA', 'the-ridge-core' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
-
-		$this->add_control(
-            'featured_image',
-            [
-                'label' => __( 'Primary Featured Image', 'the-ridge-core' ),
-                'type' => \Elementor\Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => \Elementor\Utils::get_placeholder_image_src(),
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'featured_image_secondary',
-            [
-                'label' => __( 'Secondary Featured Image', 'the-ridge-core' ),
-                'type' => \Elementor\Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => \Elementor\Utils::get_placeholder_image_src(),
-                ],
-            ]
-        );
 
 		$this->add_control(
 			'title',
 			[
 				'label' => esc_html__( 'Title', 'the-ridge-core' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => esc_html__( 'Consectetur Adipiscing', 'the-ridge-core' ),
+				'default' => esc_html__( 'Join our family', 'the-ridge-core' ),
 			]
 		);
 
-		$this->add_control(
-			'subtitle',
-			[
-				'label' => esc_html__( 'Sub Title', 'the-ridge-core' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => esc_html__( 'The Villas' ),
-			]
-		);
 
 		$this->add_control(
 			'description',
 			[
 				'label' => esc_html__( 'Description', 'the-ridge-core' ),
 				'type' => \Elementor\Controls_Manager::TEXTAREA,
-				'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'the-ridge-core' ),
+				'default' => esc_html__( 'Sign up now and embark on a journey of knowledge, inspiration, and exclusive benefits. Welcome to The Ridge family!' ),
 			]
 		);
 
@@ -87,7 +57,7 @@ class Elementor_The_Ridge_Widget_5 extends \Elementor\Widget_Base {
 	        [
 	            'label' => __( 'Button Text', 'the-ridge-core' ),
 	            'type' => \Elementor\Controls_Manager::TEXT,
-	            'default' => __( 'Explore The Villas', 'the-ridge-core' ),
+	            'default' => __( 'Join Now', 'the-ridge-core' ),
 	            'placeholder' => __( 'Enter your Button text', 'the-ridge-core' ),
 	        ]
 	    );
@@ -192,33 +162,33 @@ class Elementor_The_Ridge_Widget_5 extends \Elementor\Widget_Base {
 		    }
 		?>
 
-        <div class="container-fluid mt-5">
-            <div class="row align-items-center">
-            	<div class="col-lg-4 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0 align-self-end">
-                    <div class="section-title align-top">
-                        <h6 class="display-9 section-heading-text text-color-primary"><?php echo $settings['subtitle']; ?></h6>
-                        <h4 class="display-6 mb-3 text-color-secondary"><?php echo $settings['title']; ?></h4>
-                        <p class="display-8 para-desc mx-auto mb-0 text-color-primary"><?php echo $settings['description']; ?>
-                        </p>
-                    
-                        <div class="mt-5">
+		<!-- CTA Start -->
+        <section class="p-5 pb-0 pt-0 mt-5 newsletter">
+        <div class="container-fluid-fluid px-0 ">
+            <div class="py-2 position-relative">
+                <div class="container-fluid my-5">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-7">
+                            <h5 class="display-6 h5 mb-0 text-white title-dark"><?php echo $settings['subtitle']; ?></h5>
+                        </div><!--end col-->
+
+                        <div class="col-lg-5 col-md-7">
+                            <p class="display-8 mb-0 text-white title-dark"><?php echo $settings['description']; ?></p>
+                        </div><!--end col-->
+
+                        <div class="col-lg-4 col-md-5 text-md-center mt-4 mt-sm-0">
                             <?php if ( $settings['cta_text'] && $cta_link ) : ?>
-						        <a class="display-10 btn btn-ridge-secondary section-heading-text text-color-secondary" href="<?php echo esc_url( $cta_link ); ?>">
+						        <a class="btn btn-ridge-primary-reverse display-9 p-5 pt-2 pb-2 text-space-grotesk" href="<?php echo esc_url( $cta_link ); ?>">
 						            <?php echo esc_html( $settings['cta_text'] ); ?>
 						        </a>
 						    <?php endif; ?>
-                        </div>                            
-                    </div>
-                    <div class="mt-5 align-bottom d-none d-sm-block">
-                        <img src="<?php echo esc_url( $settings['featured_image_secondary']['url'] ); ?>" class="img-fluid shadow" alt="">
-                    </div>
-                </div><!--end col-->
-                <div class="col-lg-8 col-md-6 order-first order-sm-1">
-                    <img src="<?php echo esc_url( $settings['featured_image']['url'] ); ?>" class="img-fluid shadow" alt="">
-                </div><!--end col--> 
-        </div><!--end row-->
-    </div><!--end container-fluid-->
-
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div><!--end container-fluid-->
+            </div><!--end bg image-->
+        </div><!--end container-fluid-->
+        </section>
+        <!-- CTA End -->
 		<?php
 	}
 }
