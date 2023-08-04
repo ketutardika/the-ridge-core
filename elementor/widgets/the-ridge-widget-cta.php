@@ -163,7 +163,6 @@ class Elementor_The_Ridge_Widget_Cta extends \Elementor\Widget_Base {
 		?>
 
 		<!-- CTA Start -->
-        <section class="p-5 pb-0 pt-0 mt-5 newsletter">
         <div class="container-fluid-fluid px-0 ">
             <div class="py-2 position-relative">
                 <div class="container-fluid my-5">
@@ -187,7 +186,6 @@ class Elementor_The_Ridge_Widget_Cta extends \Elementor\Widget_Base {
                 </div><!--end container-fluid-->
             </div><!--end bg image-->
         </div><!--end container-fluid-->
-        </section>
         <!-- CTA End -->
 		<?php
 	}
