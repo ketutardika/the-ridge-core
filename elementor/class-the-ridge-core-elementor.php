@@ -48,6 +48,7 @@ function register_the_ridge_widget( $widgets_manager ) {
     require_once( __DIR__ . '/widgets/the-ridge-widget-4.php' );
     require_once( __DIR__ . '/widgets/the-ridge-widget-5.php' );
     require_once( __DIR__ . '/widgets/the-ridge-widget-cta.php' );
+    require_once( __DIR__ . '/widgets/the-ridge-widget-title.php' );
 
     $widgets_manager->register( new \Elementor_The_Ridge_Widget_1() );
     $widgets_manager->register( new \Elementor_The_Ridge_Widget_2() );
@@ -55,6 +56,7 @@ function register_the_ridge_widget( $widgets_manager ) {
     $widgets_manager->register( new \Elementor_The_Ridge_Widget_4() );
     $widgets_manager->register( new \Elementor_The_Ridge_Widget_5() );
     $widgets_manager->register( new \Elementor_The_Ridge_Widget_Cta() );
+    $widgets_manager->register( new \Elementor_The_Ridge_Widget_Title() );
 
 
 }
