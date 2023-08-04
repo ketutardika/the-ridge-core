@@ -169,7 +169,7 @@ class Elementor_The_Ridge_Widget_Cta extends \Elementor\Widget_Base {
                 <div class="container-fluid my-5">
                     <div class="row align-items-center">
                         <div class="col-lg-3 col-md-7">
-                            <h5 class="display-6 h5 mb-0 text-white title-dark"><?php echo $settings['subtitle']; ?></h5>
+                            <h5 class="display-6 h5 mb-0 text-white title-dark"><?php echo $settings['title']; ?></h5>
                         </div><!--end col-->
 
                         <div class="col-lg-5 col-md-7">
