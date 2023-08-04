@@ -182,8 +182,7 @@ class Elementor_The_Ridge_Widget_3 extends \Elementor\Widget_Base {
 	            $thumbnail_url = $thumbnail[0];
 	        }
 	    }
-		?>
-		
+
 		$cta_link = '';
 		    if ( 'external' === $settings['cta_link_type'] && $settings['cta_link_external']['url'] ) {
 		        $cta_link = $settings['cta_link_external']['url'] ? $settings['cta_link_external']['url'] : '#';
