@@ -178,7 +178,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 		            	$categories = get_the_category($post->ID);	            
 		    			?>
 
-		    			<div class="col-lg-4 col-md-6 mt-4 pt-2">
+		    			<div class="col-lg-4 col-md-6">
 			                <div class="card overflow-hidden">
 			                    <div class="image position-relative overflow-hidden">
 			                    	<?php the_post_thumbnail( 'blog-post-grid', array('class' => 'img-fluid') ); ?>
@@ -190,7 +190,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 							                $category = $categories[0];
     										$category_id = get_cat_ID( $category->name );
 							                ?>
-							                <h6 class="mt-3 display-9 section-heading-text text-color-primary">
+							                <h6 class="display-9 section-heading-text text-color-primary">
 							                	<a href="<?php echo esc_url( get_category_link($category_id) ); ?>">
 							                			<?php echo $category->name; ?>
 							                		</a>
