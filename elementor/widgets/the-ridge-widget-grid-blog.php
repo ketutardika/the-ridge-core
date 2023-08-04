@@ -172,9 +172,9 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 		            	$query->the_post();
 		            	global $post;
 		            	// Get the post title and truncate it to 122 characters
-		            	$title = $this->get_truncated_title(5);
+		            	$title = $this->get_truncated_title(8);
 			            // Get the post description and truncate it to 122 characters
-			            $description = $this->get_truncated_description(122);
+			            $description = $this->get_truncated_description(50);
 			            // Get the first category for the current post
 		            	$categories = get_the_category($post->ID);	            
 		    			?>
@@ -191,7 +191,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 							                $category = $categories[0];
     										$category_id = get_cat_ID( $category->name );
 							                ?>
-							                <h6 class="display-9 section-heading-text text-color-primary">
+							                <h6 class="mt-3 display-9 section-heading-text text-color-primary">
 							                	<a href="<?php echo esc_url( get_category_link($category_id) ); ?>">
 							                			<?php echo $category->name; ?>
 							                		</a>
