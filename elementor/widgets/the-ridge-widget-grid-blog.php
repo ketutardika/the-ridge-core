@@ -169,12 +169,13 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 			    if ($query->have_posts()) {
 			    	while ($query->have_posts()) {
 		            	$query->the_post();
+		            	global $post;
 		            	// Get the post title and truncate it to 122 characters
 		            	$title = $this->get_truncated_title(5);
 			            // Get the post description and truncate it to 122 characters
 			            $description = $this->get_truncated_description(122);
 			            // Get the first category for the current post
-		            	$categories = get_the_category();	            
+		            	$categories = get_the_category($post->ID);	            
 		    			?>
 
 		    			<div class="col-lg-4 col-md-6 mt-4 pt-2">
@@ -186,7 +187,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 			                    <div class="card-body content">	                        	
 			                        <?php 
 			                        	if (!empty($categories)) {
-			                        		foreach(get_the_category() as $categorys) 
+			                        		foreach($categories as $categorys) 
 			                        		{
 							                $category = $categories[0]; ?>
 							                <h6 class="mt-3 display-9 section-heading-text text-color-primary">
