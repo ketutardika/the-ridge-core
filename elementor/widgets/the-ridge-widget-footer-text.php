@@ -1,16 +1,16 @@
 <?php
-class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
+class Elementor_The_Ridge_Widget_Footer_Text extends \Elementor\Widget_Base {
 
 	public function get_name() {
-		return 'the_ridge_featured_footer_list';
+		return 'the_ridge_featured_footer_text';
 	}
 
 	public function get_title() {
-		return esc_html__( 'The Ridge Footer List Type 2', 'the-ridge-core' );
+		return esc_html__( 'The Ridge Footer List Type 1', 'the-ridge-core' );
 	}
 
 	public function get_icon() {
-		return 'eicon-editor-list-ul';
+		return 'eicon-footer';
 	}
 
 	public function get_categories() {
@@ -18,7 +18,7 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 	}
 
 	public function get_keywords() {
-		return [ 'the ridge', 'footer list' ];
+		return [ 'the ridge', 'footer text' ];
 	}
 
 	protected function register_controls() {
@@ -26,9 +26,9 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 		// Content Tab Start
 
 		$this->start_controls_section(
-			'section_footer_list',
+			'section_footer_text',
 			[
-				'label' => esc_html__( 'Footer List Type 2', 'the-ridge-core' ),
+				'label' => esc_html__( 'Footer List Type 1', 'the-ridge-core' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -47,19 +47,13 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 
 
 		$repeater->add_control(
-			'website_link',
-	        [
-	            'label' => esc_html__( 'Link', 'textdomain' ),
-				'type' => \Elementor\Controls_Manager::URL,
-				'options' => [ 'url', 'is_external', 'nofollow' ],
-				'default' => [
-					'url' => '',
-					'is_external' => true,
-					'nofollow' => true,
-					// 'custom_attributes' => '',
-				],
-				'label_block' => true,
-	        ]
+			'list_content',
+			[
+				'label' => esc_html__( 'Content', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::WYSIWYG,
+				'default' => esc_html__( 'List Content' , 'textdomain' ),
+				'show_label' => false,
+			]
 		);
 
 		$this->add_control(
@@ -67,7 +61,7 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 			[
 				'label' => esc_html__( 'Menu Title', 'the-ridge-core' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => esc_html__( 'Information', 'the-ridge-core' ),
+				'default' => esc_html__( 'Contact Us', 'the-ridge-core' ),
 			]
 		);
 
@@ -80,11 +74,11 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 				'default' => [
 					[
 						'list_title' => esc_html__( 'About The Ridge', 'textdomain' ),
-						'website_link' => esc_html__( 'http://staging.theridgebali.com/', 'textdomain' ),
+						'list_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'textdomain' ),
 					],
 					[
 						'list_title' => esc_html__( 'Explore The Villas', 'textdomain' ),
-						'website_link' => esc_html__( 'http://staging.theridgebali.com/', 'textdomain' ),
+						'list_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'textdomain' ),
 					],
 				],
 				'title_field' => '{{{ list_title }}}',
@@ -109,17 +103,18 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
           <h6 class="display-9 text-uppercase fw-medium mb-4 text-space-grotesk text-color-secondary">
             <?php echo $settings['title']; ?>
           </h6>
-          <p class="display-8 text-color-primary">
+          
           	<?php
           	if ( $settings['list'] ) {
 	          	foreach (  $settings['list'] as $item ) {
 	          	?>
-	            <a href="<?php echo esc_url($item['website_link']['url']); ?>" class="text-reset elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>"><?php echo $item['list_title'] ?> </a><br/>
+	          	<p class="display-8 text-color-primary">
+	          		<?php echo $item['list_content']; ?>
+	          	</p>
 	          	<?php
           		}
           	}
           	?>
-          </p>
         </div>
         <!-- Grid column -->
      <?php

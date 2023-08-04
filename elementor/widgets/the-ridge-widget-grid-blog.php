@@ -10,7 +10,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-dual-button';
+		return 'eicon-posts-grid';
 	}
 
 	public function get_categories() {

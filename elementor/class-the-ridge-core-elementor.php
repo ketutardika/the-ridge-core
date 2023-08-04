@@ -51,6 +51,7 @@ function register_the_ridge_widget( $widgets_manager ) {
     require_once( __DIR__ . '/widgets/the-ridge-widget-title.php' );
     require_once( __DIR__ . '/widgets/the-ridge-widget-grid-blog.php' );
     require_once( __DIR__ . '/widgets/the-ridge-widget-footer-list.php' );
+    require_once( __DIR__ . '/widgets/the-ridge-widget-footer-text.php' );
 
     $widgets_manager->register( new \Elementor_The_Ridge_Widget_1() );
     $widgets_manager->register( new \Elementor_The_Ridge_Widget_2() );
@@ -61,5 +62,6 @@ function register_the_ridge_widget( $widgets_manager ) {
     $widgets_manager->register( new \Elementor_The_Ridge_Widget_Title() );
     $widgets_manager->register( new \Elementor_The_Ridge_Widget_Grid_Blog() );
     $widgets_manager->register( new \Elementor_The_Ridge_Widget_Footer_List() );
+    $widgets_manager->register( new \Elementor_The_Ridge_Widget_Footer_Text() );
 }
 add_action( 'elementor/widgets/register', 'register_the_ridge_widget' );
