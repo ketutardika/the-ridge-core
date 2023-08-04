@@ -170,7 +170,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 			    	while ($query->have_posts()) {
 		            	$query->the_post();
 		            	// Get the post thumbnail and crop it to 416x550 size
-			            $thumbnail = $this->get_resized_thumbnail(416, 550);
+			            $thumbnail = $this->get_resized_thumbnail($post_id, 416, 550);
 			            // Get the post description and truncate it to 122 characters
 			            $description = $this->get_truncated_description(122);
 			            // Get the first category for the current post
@@ -236,8 +236,8 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
     }
 
     // Helper function to get resized post thumbnail
-	private function get_resized_thumbnail($width, $height) {
-	    $thumbnail_id = get_post_thumbnail_id();
+	private function get_resized_thumbnail($post_id, $width, $height) {
+	    $thumbnail_id = get_post_thumbnail_id($post_id);
 	    if ($thumbnail_id) {
 	        $thumbnail = wp_get_attachment_image_src($thumbnail_id, array($width, $height), true);
 	        if ($thumbnail) {
