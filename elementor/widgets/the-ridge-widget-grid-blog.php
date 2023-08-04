@@ -189,9 +189,12 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 			                        	if (!empty($categories)) {
 			                        		foreach($categories as $categorys) 
 			                        		{
-							                $category = $categories[0]; ?>
+							                $category = $categories[0]; 
+							                // Get the ID of a given category
+    										$category_id = get_cat_ID( $categorys->name );
+							                ?>
 							                <h6 class="mt-3 display-9 section-heading-text text-color-primary">
-							                	<a href="<?php get_category_link($categorys->cat_ID); ?>">
+							                	<a href="<?php $category_id; ?>">
 							                			<?php echo $categorys->name; ?>
 							                		</a>
 							                </h6>
