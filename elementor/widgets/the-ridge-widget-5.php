@@ -229,11 +229,11 @@ class Elementor_The_Ridge_Widget_5 extends \Elementor\Widget_Base {
                         </div>                            
                     </div>
                     <div class="mt-5 align-bottom d-none d-sm-block">
-                        <img src="<?php echo esc_url( $thumbnail_url_second ); ?>" class="img-fluid shadow" alt="">
+                        <img src="<?php echo esc_url( $thumbnail_url_second ); ?>" class="img-fluid shadow" alt="" style="display: block; height: 100%; width: 100%;">
                     </div>
                 </div><!--end col-->
                 <div class="col-lg-8 col-md-6 order-first order-sm-1">
-                    <img src="<?php echo esc_url( $thumbnail_url ); ?>" class="img-fluid shadow" alt="">
+                    <img src="<?php echo esc_url( $thumbnail_url ); ?>" class="img-fluid shadow" alt="" style="display: block; height: 100%; width: 100%;">
                 </div><!--end col--> 
         </div><!--end row-->
     </div><!--end container-fluid-->

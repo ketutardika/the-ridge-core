@@ -194,7 +194,7 @@ class Elementor_The_Ridge_Widget_3 extends \Elementor\Widget_Base {
         <div class="container-fluid mt-5">
                 <div class="row align-items-center">
                     <div class="col-lg-8 col-md-6">
-                        <img src="<?php echo esc_url( $thumbnail_url ); ?>" class="img-fluid shadow" alt="">
+                        <img src="<?php echo esc_url( $thumbnail_url ); ?>" class="img-fluid shadow" alt="" style="display: block; height: 100%; width: 100%;">
                     </div><!--end col-->
 
                     <div class="col-lg-4 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
