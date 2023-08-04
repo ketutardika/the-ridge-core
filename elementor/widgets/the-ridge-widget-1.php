@@ -99,7 +99,7 @@ class Elementor_The_Ridge_Widget_1 extends \Elementor\Widget_Base {
 		?>
 
 		<!-- Hero Start -->
-        <section class="bg-half-170 bg-light pb-0 d-table w-100 bg-hero-ridge" style="background: url('<?php echo esc_url( $settings['hero_image']['url'] ); ?>');">
+        <section class="bg-half-170 bg-light pb-0 d-table w-100 bg-hero-ridge" style="background: url('<?php echo esc_url( $settings['hero_image']['url'], 'thumbnail' ); ?>');">
             <div class="container-fluid">
                 <div class="row justify-content-center mt-5">
                     <div class="col-lg-12 text-center">
