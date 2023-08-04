@@ -73,12 +73,8 @@ class Elementor_The_Ridge_Widget_Footer_Text extends \Elementor\Widget_Base {
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'list_title' => esc_html__( 'About The Ridge', 'textdomain' ),
-						'list_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'textdomain' ),
-					],
-					[
-						'list_title' => esc_html__( 'Explore The Villas', 'textdomain' ),
-						'list_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'textdomain' ),
+						'list_title' => esc_html__( 'Contact Us', 'textdomain' ),
+						'list_content' => esc_html__( 'Information About and Contact Us The Ridge Bali.', 'textdomain' ),
 					],
 				],
 				'title_field' => '{{{ list_title }}}',
