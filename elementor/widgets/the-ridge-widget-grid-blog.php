@@ -157,7 +157,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 	    ?>
 
 		<!-- Blog Grid Start -->
-	    <div class="row justify-content-center">
+	    <div class="row justify-content-center blog-section">
 	    	<?php
 	    		$args = array(
 			        'post_type' => $settings['post_type'],
