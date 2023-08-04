@@ -235,9 +235,9 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 	private function get_resized_thumbnail($width, $height) {
 	    $thumbnail_id = get_post_thumbnail_id();
 	    if ($thumbnail_id) {
-	        $resized_image = image_resize_dimensions(get_post_meta($thumbnail_id, '_wp_attachment_metadata', true), $width, $height, true);
-	        if ($resized_image) {
-	            return wp_get_attachment_image_src($thumbnail_id, array($width, $height));
+	        $thumbnail = wp_get_attachment_image_src($thumbnail_id, array($width, $height), true);
+	        if ($thumbnail) {
+	            return $thumbnail;
 	        }
 	    }
 	    return false;
