@@ -6,7 +6,7 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'The Ridge Footer List', 'the-ridge-core' );
+		return esc_html__( 'The Ridge Footer List Type 2', 'the-ridge-core' );
 	}
 
 	public function get_icon() {
@@ -28,7 +28,7 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'section_featured_title',
 			[
-				'label' => esc_html__( 'Footer List', 'the-ridge-core' ),
+				'label' => esc_html__( 'Footer List Type 2', 'the-ridge-core' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -45,26 +45,6 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 			]
 		);
 
-		$repeater->add_control(
-			'list_content',
-			[
-				'label' => esc_html__( 'Content', 'textdomain' ),
-				'type' => \Elementor\Controls_Manager::WYSIWYG,
-				'default' => esc_html__( 'List Content' , 'textdomain' ),
-				'show_label' => false,
-			]
-		);
-
-		$repeater->add_control(
-			'list_color',
-			[
-				'label' => esc_html__( 'Color', 'textdomain' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}' => 'color: {{VALUE}}'
-				],
-			]
-		);
 
 		$repeater->add_control(
 			'website_link',
@@ -83,6 +63,15 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
+			'title',
+			[
+				'label' => esc_html__( 'Menu Title', 'the-ridge-core' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'Information', 'the-ridge-core' ),
+			]
+		);
+
+		$this->add_control(
 			'list',
 			[
 				'label' => esc_html__( 'Repeater List', 'textdomain' ),
@@ -90,12 +79,12 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'list_title' => esc_html__( 'Title #1', 'textdomain' ),
-						'list_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'textdomain' ),
+						'list_title' => esc_html__( 'About The Ridge', 'textdomain' ),
+						'website_link' => esc_url__( 'http://staging.theridgebali.com/', 'textdomain' ),
 					],
 					[
-						'list_title' => esc_html__( 'Title #2', 'textdomain' ),
-						'list_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'textdomain' ),
+						'list_title' => esc_html__( 'Explore The Villas', 'textdomain' ),
+						'website_link' => esc_url__( 'http://staging.theridgebali.com/', 'textdomain' ),
 					],
 				],
 				'title_field' => '{{{ list_title }}}',
@@ -111,29 +100,49 @@ class Elementor_The_Ridge_Widget_Footer_List extends \Elementor\Widget_Base {
 		if ( ! empty( $settings['website_link']['url'] ) ) {
 			$this->add_link_attributes( 'website_link', $settings['website_link'] );
 		}
-		if ( $settings['list'] ) {
-			echo '<dl>';
-			foreach (  $settings['list'] as $item ) {
-				echo '<dt class="elementor-repeater-item-' . esc_attr( $item['_id'] ) . '">' . $item['list_title'] . '</dt>';
-				echo '<dd>' . $item['list_content'] . '</dd>';
-				echo '<dd>' . $item['website_link']['url'] . '</dd>';
-			}
-			echo '</dl>';
-		}
+
+		?>
+
+
+		<!-- Grid column -->
+        <div class="col-md-12">
+          <h6 class="display-9 text-uppercase fw-medium mb-4 text-space-grotesk text-color-secondary">
+            <?php echo $settings['title']; ?>
+          </h6>
+          <p class="display-8 text-color-primary">
+          	<?php
+          	if ( $settings['list'] ) {
+	          	foreach (  $settings['list'] as $item ) {
+	          	?>
+	            <a href="<?php echo esc_url($item['website_link']['url']); ?>" class="text-reset elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>"><?php echo $item['list_title'] ?> </a><br/>
+	          	<?php
+          		}
+          	}
+          	?>
+          </p>
+        </div>
+        <!-- Grid column -->
+     <?php
 	}
 
 	protected function content_template() {
 		?>
+		<!-- Grid column -->
+        <div class="col-md-12">
+          <h6 class="display-9 text-uppercase fw-medium mb-4 text-space-grotesk text-color-secondary">
+            {{{ settings.title }}}
+          </h6>
+          <p class="display-8 text-color-primary">
 		<# if ( settings.list.length ) { #>
 			<dl>
 			<# _.each( settings.list, function( item ) { #>
-				<dt class="elementor-repeater-item-{{ item._id }}">{{{ item.list_title }}}</dt>
-				<dd>{{{ item.list_content }}}</dd>
-				<dd>{{{ item.list_link_external }}}</dd>
-				<dd>{{{ item.website_link.url }}}</dd>
+				<a href="{{{ item.website_link.url }}}" class="text-reset elementor-repeater-item-{{ item._id }}">{{{ item.list_content }}}</a><br/>
 			<# }); #>
 			</dl>
 		<# } #>
-		<?php
+		</p>
+        </div>
+        <!-- Grid column -->
+     <?php
 	}
 }
