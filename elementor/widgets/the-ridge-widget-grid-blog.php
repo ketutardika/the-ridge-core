@@ -187,8 +187,6 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 			                    <div class="card-body content">	                        	
 			                        <?php 
 			                        	if (!empty($categories)) {
-			                        		foreach($categories as $categorys) 
-			                        		{
 							                $category = $categories[0];
     										$category_id = get_cat_ID( $categorys->name );
 							                ?>
@@ -198,7 +196,6 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 							                		</a>
 							                </h6>
 							            <?php
-							            	}
 							            }
 			                        ?>
 			                        <h4 class="display-6 mb-3 text-color-secondary">
