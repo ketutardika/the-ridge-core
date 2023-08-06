@@ -176,13 +176,16 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 			            // Get the post description and truncate it to 122 characters
 			            $description = $this->get_truncated_description(20);
 			            // Get the first category for the current post
-		            	$categories = get_the_category($post->ID);	            
+		            	$categories = get_the_category($post->ID);           
+					    $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'blog-post-grid' );
+					    $thumbnail_url = $thumbnail[0];
 		    			?>
 
 		    			<div class="col-lg-4 col-md-6">
 			                <div class="card overflow-hidden">
 			                    <div class="image position-relative overflow-hidden">
 			                    	<?php the_post_thumbnail( 'blog-post-grid', array('class' => 'object-fit-cover') ); ?>
+			                    	<img src="<?php echo esc_url( $thumbnail_url ); ?>" class="img-fluid shadow object-fit-cover" alt=" <?php echo esc_html( $title; ?>" style="display: block; height: 100%; width: 100%;">
 			                    </div>
 
 			                    <div class="card-body content">	                        	
