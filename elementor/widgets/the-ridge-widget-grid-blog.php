@@ -182,7 +182,7 @@ class Elementor_The_Ridge_Widget_Grid_Blog extends \Elementor\Widget_Base {
 		    			<div class="col-lg-4 col-md-6">
 			                <div class="card overflow-hidden">
 			                    <div class="image position-relative overflow-hidden">
-			                    	<?php the_post_thumbnail( 'blog-post-grid', array('class' => 'img-fluid') ); ?>
+			                    	<?php the_post_thumbnail( 'blog-post-grid', array('class' => 'object-fit-cover') ); ?>
 			                    </div>
 
 			                    <div class="card-body content">	                        	
