@@ -198,7 +198,7 @@ class Elementor_The_Ridge_Widget_5 extends \Elementor\Widget_Base {
 	    }
 
 	    if ( $settings['featured_image_secondary']['id'] ) {
-	        $thumbnail = wp_get_attachment_image_src( $settings['featured_image_secondary']['id'], $$thumbnail_size_secondary );
+	        $thumbnail = wp_get_attachment_image_src( $settings['featured_image_secondary']['id'], $thumbnail_size_secondary );
 	        if ( $thumbnail ) {
 	            $thumbnail_url_second = $thumbnail[0];
 	        }
