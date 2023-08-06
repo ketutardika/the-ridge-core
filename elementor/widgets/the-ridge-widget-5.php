@@ -185,7 +185,8 @@ class Elementor_The_Ridge_Widget_5 extends \Elementor\Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-		$thumbnail_size = 'medium_large';
+		$thumbnail_size = 'large';
+		$thumbnail_size_secondary = 'medium_large';
 
 		$thumbnail_url = '';
 		$thumbnail_url_second = '';
@@ -197,7 +198,7 @@ class Elementor_The_Ridge_Widget_5 extends \Elementor\Widget_Base {
 	    }
 
 	    if ( $settings['featured_image_secondary']['id'] ) {
-	        $thumbnail = wp_get_attachment_image_src( $settings['featured_image_secondary']['id'], $thumbnail_size );
+	        $thumbnail = wp_get_attachment_image_src( $settings['featured_image_secondary']['id'], $$thumbnail_size_secondary );
 	        if ( $thumbnail ) {
 	            $thumbnail_url_second = $thumbnail[0];
 	        }
